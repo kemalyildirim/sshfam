@@ -1,6 +1,6 @@
 package main
 
-import "github.com/kemalyildirim/sshsessionmanager/cmd/ssh"
+import "github.com/kemalyildirim/sshfam/cmd/ssh"
 
 func main() {
 	ssh.Execute()

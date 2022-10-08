@@ -8,8 +8,8 @@ import (
 )
 
 var rootCmd = &cobra.Command{
-	Use:   "ssh",
-	Short: "ssh - Manage ssh saved instances",
+	Use:   ROOT_CMD,
+	Short: ROOT_CMD + " - Manage ssh saved instances",
 	Run: func(cmd *cobra.Command, args []string) {
 		fmt.Println("root")
 		fmt.Println("args: ", args)
