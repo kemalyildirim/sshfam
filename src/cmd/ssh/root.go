@@ -4,12 +4,13 @@ import (
 	"fmt"
 	"os"
 
+	"github.com/kemalyildirim/sshfam/src/commons"
 	"github.com/spf13/cobra"
 )
 
 var rootCmd = &cobra.Command{
-	Use:   ROOT_CMD,
-	Short: ROOT_CMD + " - Manage ssh saved instances",
+	Use:   commons.ROOT_CMD,
+	Short: commons.ROOT_CMD + " - Manage ssh saved instances",
 	Run: func(cmd *cobra.Command, args []string) {
 		fmt.Println("root")
 		fmt.Println("args: ", args)
