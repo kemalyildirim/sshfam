@@ -4,7 +4,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/kemalyildirim/sshfam/cmd/ssh"
+	"github.com/kemalyildirim/sshfam/src/cmd/ssh"
 	"github.com/spf13/viper"
 )
 

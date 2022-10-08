@@ -18,5 +18,5 @@ var addServerCli = &cobra.Command{
 }
 
 func init() {
-	rootCmd.AddCommand(addServerCli)
+	// rootCmd.AddCommand(addServerCli)
 }
