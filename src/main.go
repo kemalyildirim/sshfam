@@ -11,6 +11,7 @@ import (
 func initConfig() {
 	viper.SetConfigName(commons.ROOT_CMD)
 	viper.SetConfigType("properties")
+	// TODO
 	// homeDir, err := os.UserHomeDir()
 	// if err != nil {
 	// 	log.Fatal(err)
