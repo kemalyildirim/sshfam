@@ -12,6 +12,6 @@ func Connect(con *RemoteConnection) error {
 	return nil
 }
 
-func ListConnections() []RemoteConnection {
-	return nil
+func ListConnections() ([]RemoteConnection, error) {
+	return nil, nil
 }

@@ -12,7 +12,10 @@ var listCli = &cobra.Command{
 	Run: func(cmd *cobra.Command, args []string) {
 		log.Println("list")
 		log.Println("args: ", args)
-		connections := ListConnections()
+		connections, err := ListConnections()
+		if err != nil {
+			log.Fatal(err)
+		}
 		log.Println("connections:\n", connections)
 	},
 }
