@@ -1,3 +1,4 @@
 package commons
 
-var ROOT_CMD = "sshfam"
+var APP_NAME = "sshfam"
+var CONFIG_TYPE = "yaml"
