@@ -1,7 +1,7 @@
 package main
 
-import "github.com/kemalyildirim/sshfam/src/cmd/ssh"
+import "github.com/kemalyildirim/sshfam/src/cmd"
 
 func main() {
-	ssh.Execute()
+	cmd.Execute()
 }
