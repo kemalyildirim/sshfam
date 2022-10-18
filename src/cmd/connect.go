@@ -5,6 +5,8 @@ import (
 	"os"
 	"os/exec"
 
+	"github.com/kemalyildirim/sshfam/src/commons"
+	"github.com/kemalyildirim/sshfam/src/config"
 	"github.com/spf13/cobra"
 )
 
@@ -20,10 +22,23 @@ var connectCli = &cobra.Command{
 		execCmd.Stdout = os.Stdout
 		execCmd.Stderr = os.Stderr
 		log.Println(execCmd.String())
-		err := execCmd.Run()
-		if err != nil {
-			log.Fatal(err)
-		}
+		channel := make(chan error)
+		go func() {
+			err := execCmd.Run()
+			channel <- err
+		}()
+		go func(err error) {
+			if err != nil {
+				log.Println("test")
+				var con commons.Connection = commons.Connection{}
+				con.Cred = args[0]
+				con.Pass = "todo"
+				config.SaveCred(con)
+			} else {
+				log.Fatal("connection failed")
+			}
+		}(<-channel)
+
 		log.Println("finished")
 	},
 }

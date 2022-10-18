@@ -13,7 +13,7 @@ var CFG = viper.New()
 var homeDir, _ = os.UserHomeDir()
 var CONFIG_PATH = homeDir + string(os.PathSeparator) + "." + commons.APP_NAME + string(os.PathSeparator)
 
-func initViper() {
+func InitViper() {
 	CFG.SetConfigName(commons.APP_NAME)
 	CFG.SetConfigType(commons.CONFIG_TYPE)
 	os.Mkdir(CONFIG_PATH, fs.ModeDir)
@@ -35,5 +35,5 @@ func initViper() {
 
 func SaveCred(con commons.Connection) {
 	CFG.Set("mycon", con)
-	CFG.WriteConfig()
+	CFG.SafeWriteConfig()
 }

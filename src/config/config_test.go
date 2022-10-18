@@ -14,7 +14,7 @@ var VIPER_INSTANCE_TEST = CFG
 
 func setup(tb testing.TB) func(tb testing.TB) {
 	log.Println("setup test")
-	initViper()
+	InitViper()
 	return teardown
 }
 
