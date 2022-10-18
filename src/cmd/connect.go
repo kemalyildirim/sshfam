@@ -1,7 +1,9 @@
 package cmd
 
 import (
-	"fmt"
+	"log"
+	"os"
+	"os/exec"
 
 	"github.com/spf13/cobra"
 )
@@ -11,8 +13,18 @@ var connectCli = &cobra.Command{
 	Short: "Connect to a server via SSH. Usage: sshfam connect ",
 	Long:  "Connect to a server via SSH. Save crendentials on successful login. If the credentials change override them.",
 	Run: func(cmd *cobra.Command, args []string) {
-		fmt.Println("connect")
-		fmt.Println("args: ", args)
+		log.Println("connect")
+		log.Println("args: ", args)
+		execCmd := exec.Command("ssh", args[0])
+		execCmd.Stdin = os.Stdin
+		execCmd.Stdout = os.Stdout
+		execCmd.Stderr = os.Stderr
+		log.Println(execCmd.String())
+		err := execCmd.Run()
+		if err != nil {
+			log.Fatal(err)
+		}
+		log.Println("finished")
 	},
 }
 
