@@ -31,5 +31,9 @@ func initViper() {
 			panic(err)
 		}
 	}
-	CFG.WatchConfig()
+}
+
+func SaveCred(con commons.Connection) {
+	CFG.Set("mycon", con)
+	CFG.WriteConfig()
 }
